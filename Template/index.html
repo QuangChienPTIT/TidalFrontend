@@ -1,0 +1,363 @@
+<html lang="en">
+
+<head>
+    <title>TIDAL : listen to stanley road on TIDAL</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <style>
+        .col-custom {
+            width: 50%;
+            max-width: 14rem
+        }
+
+        .offer-container {
+            z-index: 12
+        }
+
+        .box-error {
+            color: #fff;
+            background: rgba(205, 0, 94, .95);
+            min-height: 4vh;
+            padding: 1.5rem 0;
+            margin: 0;
+            z-index: 100;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            align-items: center;
+            justify-content: center
+        }
+
+        .box-error .error-message {
+            max-width: 86vw;
+            margin: 0 auto;
+            padding-right: 25px
+        }
+
+        .box-error .icon-error-box {
+            margin-right: 1rem
+        }
+
+        .box-error a {
+            text-decoration: underline
+        }
+
+        .fa-times-thin:before {
+            content: "\00d7"
+        }
+
+        .tidal-floating-sign-up {
+            position: fixed;
+            bottom: -3.5rem;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            -webkit-transition: opacity cubic-bezier(.4, 0, 1, 1) .25s, bottom cubic-bezier(.4, 0, 1, 1) .25s;
+            transition: opacity cubic-bezier(.4, 0, 1, 1) .25s, bottom cubic-bezier(.4, 0, 1, 1) .25s;
+            will-change: opacity, bottom;
+            z-index: 10
+        }
+
+        .tidal-floating-sign-up:focus,
+        .tidal-floating-sign-up:hover {
+            opacity: 1
+        }
+
+        .tidal-floating-sign-up--is-visible {
+            opacity: .93;
+            bottom: .75rem
+        }
+
+        .tidal-floating-sign-up-content {
+            display: inline-block;
+            color: #000;
+            background-color: #0ff;
+            border-radius: .375rem;
+            padding: 1rem 1.5rem
+        }
+
+        @media (max-width:560px) {
+            .tidal-floating-sign-up--is-visible {
+                opacity: 1;
+                bottom: 0
+            }
+
+            .tidal-floating-sign-up-content {
+                display: block;
+                border-radius: 0
+            }
+
+            .tidal-floating-sign-up-text {
+                display: block
+            }
+
+            .tidal-floating-sign-up-line {
+                display: none
+            }
+
+            .tidal-floating-sign-up-link {
+                display: inline-block;
+                padding-top: .25rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div data-server-rendered="true">
+            <div class="tidal-header-wrapper">
+                <div class="tidal-header theme-dark">
+                    <div class="tidal-header-content float-left"><a href=""><img alt="TIDAL" src="images/tidas2.png"
+                                class="tidal-header-logo--image"></a></div>
+                    <div class="tidal-header-content tidal-header-action"><a href="" class="btn-link btn-medium font-weight-normal hidden-sm-max">Login</a>
+                        <a href="http://tidal.com/try-now" class="tidal-header-action--trial btn-medium btn-primary-outline">Start
+                            Free Trial</a></div>
+                </div>
+            </div>
+            <div class="wrapper margin-top-nudge margin-top-lg-min-0">
+                <div class="row margin-bottom-1 trigger-sign-up">
+                    <div class="col-3 col-md-4 col-sm-4 col-xs-fullwidth">
+                        <div class="block placeholder position-relative" style="padding-bottom:100%;"><img src="images/tidas3.jpg"
+                                sizes="(min-width: 1350px) calc(331.5px - 1.5rem), (min-width: 992px) calc(25vw - 1.5rem), (min-width: 576px) calc(33.33vw - 1.5rem), calc(100vw - 3rem)"
+                                alt="Stanley Road" class="tidal-image block position-absolute">
+                            <!---->
+                        </div>
+                    </div>
+                    <div class="col-9 col-md-8 col-sm-8 col-xs-fullwidth padding-left-lg-min-1 padding-top-md-min-1">
+                        <h2 class="font-size-medium-lg-max">
+                            Stanley Road
+                        </h2>
+                        <h4 class="artist-list font-weight-normal font-size-regular-lg-max margin-0"><a href="" class="artist-list-link">Paul
+                                Weller</a></h4>
+                        <div class="row margin-top-1">
+                            <div class="col-custom">
+                                <div share="true"><a class="btn-action btn-rounded fullwidth"><span>Play
+                                            on TIDAL</span></a>
+                                    <div class="client-toggle text-center cursor-pointer">
+                                        <p><small><a> or open in our Desktop app</a></small></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-custom">
+                                <div><a class="btn-action btn-rounded fullwidth"><span>Share</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="trigger-sign-up">
+                    <div class="track-list margin-bottom-nudge-1 margin-bottom-md-max-1">
+                        <div class="row row-custom">
+                            <div class="col-12 margin-bottom-0 album-mode col-12">
+                                <div class="track-items">
+                                    <!---->
+                                    <div class="col-1 col-md-1 col-sm-1 track-list-play">
+                                        <!---->
+                                    </div>
+                                    <div class="track-list-number-col margin-bottom-0 padding-bottom-0 padding-right-nudge"><span
+                                            class="track-list-number no-select">
+                                            <p>1</p>
+                                        </span></div>
+                                    <div class="track-info margin-bottom-0 padding-bottom-0 col-9 col-md-8 col-sm-6">
+                                        <p class="track-name ellipsis margin-0"><a href="">The Changingman
+                                                <span class="track-version">(Album Version)</span></a></p>
+                                        <p class="artist-list ellipsis">
+                                            <a href="" class="artist-list-link">Paul Weller</a></p>
+                                    </div>
+                                    <div class="track-list-action margin-bottom-0 padding-bottom-0 col-2 col-md-2 col-sm-3">
+                                        <div class="track-options-menu"></div>
+                                        <div class="track-options-menu track-explicit">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="track-play-progress-wrapper progress-bar-wrapper">
+                                </div>
+                            </div>
+                            <div class="col-12 margin-bottom-0 album-mode col-12">
+                                <div class="track-items">
+                                    <div class="col-1 col-md-1 col-sm-1 track-list-play">
+                                    </div>
+                                    <div class="track-list-number-col margin-bottom-0 padding-bottom-0 padding-right-nudge"><span
+                                            class="track-list-number no-select">
+                                            <p>2</p>
+                                        </span></div>
+                                    <div class="track-info margin-bottom-0 padding-bottom-0 col-9 col-md-8 col-sm-6">
+                                        <p class="track-name ellipsis margin-0"><a href="">Porcelain Gods
+                                                <span class="track-version">(Part One)</span></a></p>
+                                        <p class="artist-list ellipsis">
+                                            <!----> <a href="" class="artist-list-link">Paul Weller</a></p>
+                                    </div>
+                                    <!---->
+                                    <div class="track-list-action margin-bottom-0 padding-bottom-0 col-2 col-md-2 col-sm-3">
+                                        <div class="track-options-menu"></div>
+                                        <div class="track-options-menu track-explicit">
+                                            <!---->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="track-play-progress-wrapper progress-bar-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin-bottom-nudge-1 margin-bottom-lg-min-2 trigger-sign-up">
+                <div class="section-header-wrapper margin-bottom-nudge">
+                    <div class="wrapper">
+                        <div class="section-header-text">
+                            <h4>Other Albums by Paul Weller</h4>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <div class="tidal-carousel-wrapper position-relative">
+                    <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
+                        <div class="margin-bottom-nudge">
+                            <a href="">
+                                <div class="block placeholder position-relative tidal-lazy-image-wrapper" style="padding-bottom:100%;"><img
+                                        src="images/tidas3.jpg" sizes="(min-width: 768px) calc(25vw - 1.5rem), calc(50vw - 1.5rem)"
+                                        alt="True Meanings (Deluxe Edition)">
+                                </div>
+                            </a></div>
+                        <div class="album-list-name font-weight-bold">
+                            <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
+                        </div>
+                        <div class="album-list-explicit">
+                            <!---->
+                        </div>
+                        <div class="album-list-name artist-name secondary-title">
+                            <p class="ellipsis"><a href="">Paul Weller</a></p>
+                        </div>
+                    </div>
+                    <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
+                        <div class="margin-bottom-nudge">
+                            <a href="">
+                                <div class="block placeholder position-relative tidal-lazy-image-wrapper" style="padding-bottom:100%;"><img
+                                        src="images/tidas3.jpg" sizes="(min-width: 768px) calc(25vw - 1.5rem), calc(50vw - 1.5rem)"
+                                        alt="True Meanings (Deluxe Edition)">
+                                </div>
+                            </a></div>
+                        <div class="album-list-name font-weight-bold">
+                            <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
+                        </div>
+                        <div class="album-list-explicit">
+                            <!---->
+                        </div>
+                        <div class="album-list-name artist-name secondary-title">
+                            <p class="ellipsis"><a href="">Paul Weller</a></p>
+                        </div>
+                    </div>
+                    <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
+                        <div class="margin-bottom-nudge">
+                            <a href="">
+                                <div class="block placeholder position-relative tidal-lazy-image-wrapper" style="padding-bottom:100%;"><img
+                                        src="images/tidas3.jpg" sizes="(min-width: 768px) calc(25vw - 1.5rem), calc(50vw - 1.5rem)"
+                                        alt="True Meanings (Deluxe Edition)">
+                                </div>
+                            </a></div>
+                        <div class="album-list-name font-weight-bold">
+                            <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
+                        </div>
+                        <div class="album-list-explicit">
+                            <!---->
+                        </div>
+                        <div class="album-list-name artist-name secondary-title">
+                            <p class="ellipsis"><a href="">Paul Weller</a></p>
+                        </div>
+                    </div>
+                    <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
+                        <div class="margin-bottom-nudge">
+                            <a href="">
+                                <div class="block placeholder position-relative tidal-lazy-image-wrapper" style="padding-bottom:100%;"><img
+                                        src="images/tidas3.jpg" sizes="(min-width: 768px) calc(25vw - 1.5rem), calc(50vw - 1.5rem)"
+                                        alt="True Meanings (Deluxe Edition)">
+                                </div>
+                            </a></div>
+                        <div class="album-list-name font-weight-bold">
+                            <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
+                        </div>
+                        <div class="album-list-explicit">
+                            <!---->
+                        </div>
+                        <div class="album-list-name artist-name secondary-title">
+                            <p class="ellipsis"><a href="">Paul Weller</a></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tidal-footer theme-light-dark close-sign-up padding-top-4 padding-top-lg-max-2">
+                    <div class="wrapper">
+                        <div class="row">
+                            <div class="col-3 col-md-centered-3 col-align-right margin-bottom-lg-min-0 text-center">
+                                <a href="" class="btn-primary-outline fullwidth margin-bottom-lg-max-1">Download TIDAL</a>
+
+                            </div>
+                            <div class="col-9 margin-bottom-md-min-0">
+                                <div class="row">
+                                    <div class="col-4 col-md-4"><span class="opacity-40 block baseline-flow">Get
+                                            Started</span>
+                                        <ul class="list-style-none">
+                                            <li class="baseline-flow"><a href="" class="primary-hover">Playlist
+                                                    Import</a></li>
+                                            <li class="baseline-flow"><a href="" class="primary-hover">Supported
+                                                    devices</a></li>
+                                            <li class="baseline-flow"><a href="" class="primary-hover">Get
+                                                    support</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-4 col-md-4"><span class="opacity-40 block baseline-flow">Account</span>
+                                        <ul class="list-style-none">
+                                            <li class="baseline-flow"><a href="" class="primary-hover">Sign
+                                                    Up</a></li>
+                                            <li class="baseline-flow"><a href="" class="primary-hover">Manage
+                                                    Account</a></li>
+                                            <li class="baseline-flow"><a href="" class="primary-hover">Redeem
+                                                    Voucher</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-4 col-md-4"><span class="opacity-40 block baseline-flow">Company</span>
+                                        <ul class="list-style-none">
+                                            <li class="baseline-flow"><a href="" class="primary-hover">About</a></li>
+                                            <li class="baseline-flow"><a href="" class="primary-hover">Career</a></li>
+                                            <li class="baseline-flow"><a href="" class="primary-hover">Press</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 margin-top-1 margin-top-md-min-4">
+                                <span class="opacity-40 font-size-small">TIDAL is the first music service with HD
+                                    sound quality, HD music videos and Curated Editorial, expertly crafted by music
+                                    journalists.</span>
+                            </div>
+                        </div>
+
+                        <div class="tidal-footer-links font-size-small clearfix padding-top-nudge padding-top-md-max-0 tidal-footer-line"><span
+                                class="float-right-md-min margin-left-nudge margin-left-md-max-0 tidal-footer-slot"></span>
+                            <ul class="list-style-none float-right-md-min clearfix">
+                                <li class="float-left-md-min margin-bottom-md-min-0 margin-right-1"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Privacy
+                                        policy</a></li>
+                                <li class="float-left-md-min margin-bottom-md-min-0 margin-right-1"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Terms
+                                        and Conditions</a></li>
+                                <li class="float-left-md-min margin-bottom-md-min-0 margin-right-1"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Stream
+                                        of Consciousness</a></li>
+                                <li class="float-left-md-min margin-bottom-md-min-0"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Contact</a></li>
+                            </ul> <span class="inline-block margin-bottom-1 opacity-40"><a title="TIDAL" href=/browse/"
+                                    class="font-size-medium text-align-medium"><i class="tidal-icon margin-right-nudge"><svg
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M12 5.6L8.3 9.3 4.6 5.6 0.9 9.3 4.6 13 8.3 9.3 12 13 8.3 16.7 12 20.4 15.7 16.7 12 13 15.7 9.3 12 5.6z" />
+                                            <path d="M16.8 6.7H22V11.9H16.8z" transform="rotate(-45 19.4 9.3)" /></svg></i></a>
+                                <span>© 2018 TIDAL Music AS</span></span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
