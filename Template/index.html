@@ -1,363 +1,519 @@
 <html lang="en">
 
 <head>
-    <title>TIDAL : listen to stanley road on TIDAL</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <style>
-        .col-custom {
-            width: 50%;
-            max-width: 14rem
-        }
-
-        .offer-container {
-            z-index: 12
-        }
-
-        .box-error {
-            color: #fff;
-            background: rgba(205, 0, 94, .95);
-            min-height: 4vh;
-            padding: 1.5rem 0;
-            margin: 0;
-            z-index: 100;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            align-items: center;
-            justify-content: center
-        }
-
-        .box-error .error-message {
-            max-width: 86vw;
-            margin: 0 auto;
-            padding-right: 25px
-        }
-
-        .box-error .icon-error-box {
-            margin-right: 1rem
-        }
-
-        .box-error a {
-            text-decoration: underline
-        }
-
-        .fa-times-thin:before {
-            content: "\00d7"
-        }
-
-        .tidal-floating-sign-up {
-            position: fixed;
-            bottom: -3.5rem;
-            left: 0;
-            right: 0;
-            opacity: 0;
-            -webkit-transition: opacity cubic-bezier(.4, 0, 1, 1) .25s, bottom cubic-bezier(.4, 0, 1, 1) .25s;
-            transition: opacity cubic-bezier(.4, 0, 1, 1) .25s, bottom cubic-bezier(.4, 0, 1, 1) .25s;
-            will-change: opacity, bottom;
-            z-index: 10
-        }
-
-        .tidal-floating-sign-up:focus,
-        .tidal-floating-sign-up:hover {
-            opacity: 1
-        }
-
-        .tidal-floating-sign-up--is-visible {
-            opacity: .93;
-            bottom: .75rem
-        }
-
-        .tidal-floating-sign-up-content {
-            display: inline-block;
-            color: #000;
-            background-color: #0ff;
-            border-radius: .375rem;
-            padding: 1rem 1.5rem
-        }
-
-        @media (max-width:560px) {
-            .tidal-floating-sign-up--is-visible {
-                opacity: 1;
-                bottom: 0
-            }
-
-            .tidal-floating-sign-up-content {
-                display: block;
-                border-radius: 0
-            }
-
-            .tidal-floating-sign-up-text {
-                display: block
-            }
-
-            .tidal-floating-sign-up-line {
-                display: none
-            }
-
-            .tidal-floating-sign-up-link {
-                display: inline-block;
-                padding-top: .25rem
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
 </head>
 
 <body>
-    <div id="app">
-        <div data-server-rendered="true">
-            <div class="tidal-header-wrapper">
-                <div class="tidal-header theme-dark">
-                    <div class="tidal-header-content float-left"><a href=""><img alt="TIDAL" src="images/tidas2.png"
-                                class="tidal-header-logo--image"></a></div>
-                    <div class="tidal-header-content tidal-header-action"><a href="" class="btn-link btn-medium font-weight-normal hidden-sm-max">Login</a>
-                        <a href="http://tidal.com/try-now" class="tidal-header-action--trial btn-medium btn-primary-outline">Start
-                            Free Trial</a></div>
-                </div>
+    <div>
+        <!--header-->
+        <div class="header-wrapper">
+            <div class="header theme-dark">
+                <div class="header-content float-left"><a href=""><img alt="TIDAL" src="images/tidas2.png" class="header-logo--image"></a></div>
+                <div class="header-content header-action"><a href="" class="btn-link btn-medium font-weight-normal hidden-sm-max">Login</a>
+                    <a href="" class="header-action--trial btn-medium btn-primary-outline">Start
+                        Free Trial</a></div>
             </div>
-            <div class="wrapper margin-top-nudge margin-top-lg-min-0">
-                <div class="row margin-bottom-1 trigger-sign-up">
-                    <div class="col-3 col-md-4 col-sm-4 col-xs-fullwidth">
-                        <div class="block placeholder position-relative" style="padding-bottom:100%;"><img src="images/tidas3.jpg"
-                                sizes="(min-width: 1350px) calc(331.5px - 1.5rem), (min-width: 992px) calc(25vw - 1.5rem), (min-width: 576px) calc(33.33vw - 1.5rem), calc(100vw - 3rem)"
-                                alt="Stanley Road" class="tidal-image block position-absolute">
-                            <!---->
-                        </div>
+            <!---->
+            <!---->
+        </div>
+        <!--header-->
+        <!--main-->
+
+        <div class="wrapper margin-top-nudge margin-top-lg-min-0">
+            <!--mainplay-->
+            <div class="row margin-bottom-1 trigger-sign-up">
+                <div class="col-3 col-md-4 col-sm-4 col-xs-fullwidth">
+                    <div class="block placeholder position-relative" style="padding-bottom: 100%">
+                        <img class="image block position-absolute" src="./images/tidas3.jpg">
+
                     </div>
-                    <div class="col-9 col-md-8 col-sm-8 col-xs-fullwidth padding-left-lg-min-1 padding-top-md-min-1">
-                        <h2 class="font-size-medium-lg-max">
-                            Stanley Road
-                        </h2>
-                        <h4 class="artist-list font-weight-normal font-size-regular-lg-max margin-0"><a href="" class="artist-list-link">Paul
-                                Weller</a></h4>
-                        <div class="row margin-top-1">
-                            <div class="col-custom">
-                                <div share="true"><a class="btn-action btn-rounded fullwidth"><span>Play
-                                            on TIDAL</span></a>
-                                    <div class="client-toggle text-center cursor-pointer">
-                                        <p><small><a> or open in our Desktop app</a></small></p>
-                                    </div>
+
+                </div>
+                <div class="col-9 col-md-8 col-sm-8 col-xs-fullwidth padding-left-lg-min-1 padding-top-md-min-1">
+                    <h2 class="font-size-medium-lg-max">Stanley Road</h2>
+                    <h4 class="font-weight-normal font-size-regular-lg-max margin-0 artist-list">
+                        <a href="" class="artist-list-link">Paul Weller</a>
+                    </h4>
+                    <div class="row margin-top-1">
+                        <div class="col-custom">
+                            <div>
+                                <a href="" class="btn-action btn-rounded fullwidth">
+                                    <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd" d="M4 0L4 24 22 12 4 0z"></path>
+                                        </svg></i>
+                                    <span>Play on TIDAL</span>
+                                </a>
+                                <div class="client-toggle text-center cursor-pointer">
+                                    <p>
+                                        <small>
+                                            <a href="">open in our Desktop app</a>
+                                        </small>
+                                    </p>
+
                                 </div>
                             </div>
-                            <div class="col-custom">
-                                <div><a class="btn-action btn-rounded fullwidth"><span>Share</span></a></div>
+                        </div>
+                        <div class="col-custom">
+                            <div>
+                                <a href="" class="btn-action btn-rounded fullwidth">
+                                    <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M18.5,14.75a3.73,3.73,0,0,0-2.94,1.45L9.11,13a3.36,3.36,0,0,0,0-1.93L15.56,7.8a3.73,3.73,0,1,0-.81-2.3,3.7,3.7,0,0,0,.14,1L8.44,9.7a3.75,3.75,0,1,0,0,4.61l6.46,3.23a3.7,3.7,0,0,0-.14,1,3.75,3.75,0,1,0,3.75-3.75Zm0-11.5A2.25,2.25,0,1,1,16.25,5.5,2.25,2.25,0,0,1,18.5,3.25Zm-13,11A2.25,2.25,0,1,1,7.75,12,2.25,2.25,0,0,1,5.5,14.25Zm13,6.5a2.25,2.25,0,1,1,2.25-2.25A2.25,2.25,0,0,1,18.5,20.75Z"></path>
+                                        </svg></i>
+                                    <span>Share</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="trigger-sign-up">
-                    <div class="track-list margin-bottom-nudge-1 margin-bottom-md-max-1">
-                        <div class="row row-custom">
-                            <div class="col-12 margin-bottom-0 album-mode col-12">
-                                <div class="track-items">
+            </div>
+            <!--mainplay-->
+            <!--listview-->
+            <div class="trigger-sign-up">
+                <div class="track-list margin-bottom-nudge-1 margin-top-md-max-1">
+                    <!--row-->
+                    <div class="row row-custom">
+                        <!--row1-->
+                        <div class="col-12 margin-bottom-0 album-mode col-12">
+                            <div class="track-items">
+                                <div class="col-1 col-md-1 col-sm-1 track-list-play">
+                                    <div class="track-list-controls"><i class="icon track-list-play-icon font-size-small"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" d="M4 0L4 24 22 12 4 0z"></path>
+                                            </svg></i> <i class="icon track-list-play-icon font-size-small hidden"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M4 0H10V24H4z"></path>
+                                                <path d="M14 0H20V24H14z"></path>
+                                            </svg></i></div>
                                     <!---->
-                                    <div class="col-1 col-md-1 col-sm-1 track-list-play">
+                                </div>
+                                <div class="track-list-number-col margin-bottom-0 padding-bottom-0 padding-right-nudge"><span
+                                        class="track-list-number no-select">
+                                        <p>1</p>
+                                    </span></div>
+                                <div class="track-info margin-bottom-0 padding-bottom-0 col-9 col-md-8 col-sm-6">
+                                    <p class="track-name ellipsis margin-0"><a href="">The
+                                            Changingman
+                                            <span class="track-version">(Album Version)</span></a></p>
+                                    <p class="artist-list ellipsis">
+                                        <!----> <a href="" class="artist-list-link">Paul Weller</a></p>
+                                </div>
+                                <!---->
+                                <div class="track-list-action margin-bottom-0 padding-bottom-0 col-2 col-md-2 col-sm-3">
+                                    <div class="track-options-menu"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24">
+                                                <circle cx="5.5" cy="12" r="1.5"></circle>
+                                                <circle cx="12" cy="12" r="1.5"></circle>
+                                                <circle cx="18.5" cy="12" r="1.5"></circle>
+                                            </svg></i></div>
+                                    <div class="track-options-menu track-explicit">
                                         <!---->
                                     </div>
-                                    <div class="track-list-number-col margin-bottom-0 padding-bottom-0 padding-right-nudge"><span
-                                            class="track-list-number no-select">
-                                            <p>1</p>
-                                        </span></div>
-                                    <div class="track-info margin-bottom-0 padding-bottom-0 col-9 col-md-8 col-sm-6">
-                                        <p class="track-name ellipsis margin-0"><a href="">The Changingman
-                                                <span class="track-version">(Album Version)</span></a></p>
-                                        <p class="artist-list ellipsis">
-                                            <a href="" class="artist-list-link">Paul Weller</a></p>
-                                    </div>
-                                    <div class="track-list-action margin-bottom-0 padding-bottom-0 col-2 col-md-2 col-sm-3">
-                                        <div class="track-options-menu"></div>
-                                        <div class="track-options-menu track-explicit">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="track-play-progress-wrapper progress-bar-wrapper">
                                 </div>
                             </div>
-                            <div class="col-12 margin-bottom-0 album-mode col-12">
-                                <div class="track-items">
-                                    <div class="col-1 col-md-1 col-sm-1 track-list-play">
-                                    </div>
-                                    <div class="track-list-number-col margin-bottom-0 padding-bottom-0 padding-right-nudge"><span
-                                            class="track-list-number no-select">
-                                            <p>2</p>
-                                        </span></div>
-                                    <div class="track-info margin-bottom-0 padding-bottom-0 col-9 col-md-8 col-sm-6">
-                                        <p class="track-name ellipsis margin-0"><a href="">Porcelain Gods
-                                                <span class="track-version">(Part One)</span></a></p>
-                                        <p class="artist-list ellipsis">
-                                            <!----> <a href="" class="artist-list-link">Paul Weller</a></p>
-                                    </div>
+                            <div class="track-play-progress-wrapper progress-bar-wrapper">
+                                <div class=""></div>
+                            </div>
+                        </div>
+                        <!--row1-->
+                        <div class="col-12 margin-bottom-0 album-mode col-12">
+                            <div class="track-items">
+                                <div class="col-1 col-md-1 col-sm-1 track-list-play">
+                                    <div class="track-list-controls"><i class="icon track-list-play-icon font-size-small"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" d="M4 0L4 24 22 12 4 0z"></path>
+                                            </svg></i> <i class="icon track-list-play-icon font-size-small hidden"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M4 0H10V24H4z"></path>
+                                                <path d="M14 0H20V24H14z"></path>
+                                            </svg></i></div>
                                     <!---->
-                                    <div class="track-list-action margin-bottom-0 padding-bottom-0 col-2 col-md-2 col-sm-3">
-                                        <div class="track-options-menu"></div>
-                                        <div class="track-options-menu track-explicit">
-                                            <!---->
-                                        </div>
+                                </div>
+                                <div class="track-list-number-col margin-bottom-0 padding-bottom-0 padding-right-nudge"><span
+                                        class="track-list-number no-select">
+                                        <p>1</p>
+                                    </span></div>
+                                <div class="track-info margin-bottom-0 padding-bottom-0 col-9 col-md-8 col-sm-6">
+                                    <p class="track-name ellipsis margin-0"><a href="">The
+                                            Changingman
+                                            <span class="track-version">(Album Version)</span></a></p>
+                                    <p class="artist-list ellipsis">
+                                        <!----> <a href="" class="artist-list-link">Paul Weller</a></p>
+                                </div>
+                                <!---->
+                                <div class="track-list-action margin-bottom-0 padding-bottom-0 col-2 col-md-2 col-sm-3">
+                                    <div class="track-options-menu"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24">
+                                                <circle cx="5.5" cy="12" r="1.5"></circle>
+                                                <circle cx="12" cy="12" r="1.5"></circle>
+                                                <circle cx="18.5" cy="12" r="1.5"></circle>
+                                            </svg></i></div>
+                                    <div class="track-options-menu track-explicit">
+                                        <!---->
                                     </div>
                                 </div>
-                                <div class="track-play-progress-wrapper progress-bar-wrapper">
-                                </div>
+                            </div>
+                            <div class="track-play-progress-wrapper progress-bar-wrapper">
+                                <div class=""></div>
                             </div>
                         </div>
+                        <!--row1-->
+                        <div class="col-12 margin-bottom-0 album-mode col-12">
+                            <div class="track-items">
+                                <div class="col-1 col-md-1 col-sm-1 track-list-play">
+                                    <div class="track-list-controls"><i class="icon track-list-play-icon font-size-small"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" d="M4 0L4 24 22 12 4 0z"></path>
+                                            </svg></i> <i class="icon track-list-play-icon font-size-small hidden"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M4 0H10V24H4z"></path>
+                                                <path d="M14 0H20V24H14z"></path>
+                                            </svg></i></div>
+                                    <!---->
+                                </div>
+                                <div class="track-list-number-col margin-bottom-0 padding-bottom-0 padding-right-nudge"><span
+                                        class="track-list-number no-select">
+                                        <p>1</p>
+                                    </span></div>
+                                <div class="track-info margin-bottom-0 padding-bottom-0 col-9 col-md-8 col-sm-6">
+                                    <p class="track-name ellipsis margin-0"><a href="">The
+                                            Changingman
+                                            <span class="track-version">(Album Version)</span></a></p>
+                                    <p class="artist-list ellipsis">
+                                        <!----> <a href="" class="artist-list-link">Paul Weller</a></p>
+                                </div>
+                                <!---->
+                                <div class="track-list-action margin-bottom-0 padding-bottom-0 col-2 col-md-2 col-sm-3">
+                                    <div class="track-options-menu"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24">
+                                                <circle cx="5.5" cy="12" r="1.5"></circle>
+                                                <circle cx="12" cy="12" r="1.5"></circle>
+                                                <circle cx="18.5" cy="12" r="1.5"></circle>
+                                            </svg></i></div>
+                                    <div class="track-options-menu track-explicit">
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="track-play-progress-wrapper progress-bar-wrapper">
+                                <div class=""></div>
+                            </div>
+                        </div>
+                        <!--row1-->
+                        <div class="col-12 margin-bottom-0 album-mode col-12">
+                            <div class="track-items">
+                                <div class="col-1 col-md-1 col-sm-1 track-list-play">
+                                    <div class="track-list-controls"><i class="icon track-list-play-icon font-size-small"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" d="M4 0L4 24 22 12 4 0z"></path>
+                                            </svg></i> <i class="icon track-list-play-icon font-size-small hidden"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M4 0H10V24H4z"></path>
+                                                <path d="M14 0H20V24H14z"></path>
+                                            </svg></i></div>
+                                    <!---->
+                                </div>
+                                <div class="track-list-number-col margin-bottom-0 padding-bottom-0 padding-right-nudge"><span
+                                        class="track-list-number no-select">
+                                        <p>1</p>
+                                    </span></div>
+                                <div class="track-info margin-bottom-0 padding-bottom-0 col-9 col-md-8 col-sm-6">
+                                    <p class="track-name ellipsis margin-0"><a href="">The
+                                            Changingman
+                                            <span class="track-version">(Album Version)</span></a></p>
+                                    <p class="artist-list ellipsis">
+                                        <!----> <a href="" class="artist-list-link">Paul Weller</a></p>
+                                </div>
+                                <!---->
+                                <div class="track-list-action margin-bottom-0 padding-bottom-0 col-2 col-md-2 col-sm-3">
+                                    <div class="track-options-menu"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24">
+                                                <circle cx="5.5" cy="12" r="1.5"></circle>
+                                                <circle cx="12" cy="12" r="1.5"></circle>
+                                                <circle cx="18.5" cy="12" r="1.5"></circle>
+                                            </svg></i></div>
+                                    <div class="track-options-menu track-explicit">
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="track-play-progress-wrapper progress-bar-wrapper">
+                                <div class=""></div>
+                            </div>
+                        </div>
+                        <!--row1-->
+                        <div class="col-12 margin-bottom-0 album-mode col-12">
+                            <div class="track-items">
+                                <div class="col-1 col-md-1 col-sm-1 track-list-play">
+                                    <div class="track-list-controls"><i class="icon track-list-play-icon font-size-small"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" d="M4 0L4 24 22 12 4 0z"></path>
+                                            </svg></i> <i class="icon track-list-play-icon font-size-small hidden"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M4 0H10V24H4z"></path>
+                                                <path d="M14 0H20V24H14z"></path>
+                                            </svg></i></div>
+                                    <!---->
+                                </div>
+                                <div class="track-list-number-col margin-bottom-0 padding-bottom-0 padding-right-nudge"><span
+                                        class="track-list-number no-select">
+                                        <p>1</p>
+                                    </span></div>
+                                <div class="track-info margin-bottom-0 padding-bottom-0 col-9 col-md-8 col-sm-6">
+                                    <p class="track-name ellipsis margin-0"><a href="">The
+                                            Changingman
+                                            <span class="track-version">(Album Version)</span></a></p>
+                                    <p class="artist-list ellipsis">
+                                        <!----> <a href="" class="artist-list-link">Paul Weller</a></p>
+                                </div>
+                                <!---->
+                                <div class="track-list-action margin-bottom-0 padding-bottom-0 col-2 col-md-2 col-sm-3">
+                                    <div class="track-options-menu"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24">
+                                                <circle cx="5.5" cy="12" r="1.5"></circle>
+                                                <circle cx="12" cy="12" r="1.5"></circle>
+                                                <circle cx="18.5" cy="12" r="1.5"></circle>
+                                            </svg></i></div>
+                                    <div class="track-options-menu track-explicit">
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="track-play-progress-wrapper progress-bar-wrapper">
+                                <div class=""></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
             </div>
+            <!--listview-->
+            <!--image-carouse-->
             <div class="margin-bottom-nudge-1 margin-bottom-lg-min-2 trigger-sign-up">
-                <div class="section-header-wrapper margin-bottom-nudge">
+                <div class="margin-bottom-nudge">
                     <div class="wrapper">
-                        <div class="section-header-text">
-                            <h4>Other Albums by Paul Weller</h4>
-                        </div>
-                        <!---->
+                        <h4>Other Albums by Paul Weller</h4>
                     </div>
                 </div>
-                <div class="tidal-carousel-wrapper position-relative">
-                    <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
-                        <div class="margin-bottom-nudge">
-                            <a href="">
-                                <div class="block placeholder position-relative tidal-lazy-image-wrapper" style="padding-bottom:100%;"><img
-                                        src="images/tidas3.jpg" sizes="(min-width: 768px) calc(25vw - 1.5rem), calc(50vw - 1.5rem)"
-                                        alt="True Meanings (Deluxe Edition)">
-                                </div>
-                            </a></div>
-                        <div class="album-list-name font-weight-bold">
-                            <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
-                        </div>
-                        <div class="album-list-explicit">
-                            <!---->
-                        </div>
-                        <div class="album-list-name artist-name secondary-title">
-                            <p class="ellipsis"><a href="">Paul Weller</a></p>
-                        </div>
-                    </div>
-                    <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
-                        <div class="margin-bottom-nudge">
-                            <a href="">
-                                <div class="block placeholder position-relative tidal-lazy-image-wrapper" style="padding-bottom:100%;"><img
-                                        src="images/tidas3.jpg" sizes="(min-width: 768px) calc(25vw - 1.5rem), calc(50vw - 1.5rem)"
-                                        alt="True Meanings (Deluxe Edition)">
-                                </div>
-                            </a></div>
-                        <div class="album-list-name font-weight-bold">
-                            <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
-                        </div>
-                        <div class="album-list-explicit">
-                            <!---->
-                        </div>
-                        <div class="album-list-name artist-name secondary-title">
-                            <p class="ellipsis"><a href="">Paul Weller</a></p>
-                        </div>
-                    </div>
-                    <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
-                        <div class="margin-bottom-nudge">
-                            <a href="">
-                                <div class="block placeholder position-relative tidal-lazy-image-wrapper" style="padding-bottom:100%;"><img
-                                        src="images/tidas3.jpg" sizes="(min-width: 768px) calc(25vw - 1.5rem), calc(50vw - 1.5rem)"
-                                        alt="True Meanings (Deluxe Edition)">
-                                </div>
-                            </a></div>
-                        <div class="album-list-name font-weight-bold">
-                            <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
-                        </div>
-                        <div class="album-list-explicit">
-                            <!---->
-                        </div>
-                        <div class="album-list-name artist-name secondary-title">
-                            <p class="ellipsis"><a href="">Paul Weller</a></p>
-                        </div>
-                    </div>
-                    <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
-                        <div class="margin-bottom-nudge">
-                            <a href="">
-                                <div class="block placeholder position-relative tidal-lazy-image-wrapper" style="padding-bottom:100%;"><img
-                                        src="images/tidas3.jpg" sizes="(min-width: 768px) calc(25vw - 1.5rem), calc(50vw - 1.5rem)"
-                                        alt="True Meanings (Deluxe Edition)">
-                                </div>
-                            </a></div>
-                        <div class="album-list-name font-weight-bold">
-                            <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
-                        </div>
-                        <div class="album-list-explicit">
-                            <!---->
-                        </div>
-                        <div class="album-list-name artist-name secondary-title">
-                            <p class="ellipsis"><a href="">Paul Weller</a></p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="tidal-footer theme-light-dark close-sign-up padding-top-4 padding-top-lg-max-2">
-                    <div class="wrapper">
-                        <div class="row">
-                            <div class="col-3 col-md-centered-3 col-align-right margin-bottom-lg-min-0 text-center">
-                                <a href="" class="btn-primary-outline fullwidth margin-bottom-lg-max-1">Download TIDAL</a>
-
+                <div class="carousel-wrapper position-relative">
+                    <div class="carousel row nowrap nowrap-wrapper " role="region" aria-label="carousel"
+                        tabindex="0">
+                        <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
+                            <div class="margin-bottom-nudge">
+                                <a href="">
+                                    <div class="block placeholder position-relative lazy-image-wrapper" style="padding-bottom:100%;"><img
+                                            src="images/tidas3.jpg" alt="True Meanings (Deluxe Edition)">
+                                    </div>
+                                </a></div>
+                            <div class="album-list-name font-weight-bold">
+                                <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
                             </div>
-                            <div class="col-9 margin-bottom-md-min-0">
-                                <div class="row">
-                                    <div class="col-4 col-md-4"><span class="opacity-40 block baseline-flow">Get
-                                            Started</span>
-                                        <ul class="list-style-none">
-                                            <li class="baseline-flow"><a href="" class="primary-hover">Playlist
-                                                    Import</a></li>
-                                            <li class="baseline-flow"><a href="" class="primary-hover">Supported
-                                                    devices</a></li>
-                                            <li class="baseline-flow"><a href="" class="primary-hover">Get
-                                                    support</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-4 col-md-4"><span class="opacity-40 block baseline-flow">Account</span>
-                                        <ul class="list-style-none">
-                                            <li class="baseline-flow"><a href="" class="primary-hover">Sign
-                                                    Up</a></li>
-                                            <li class="baseline-flow"><a href="" class="primary-hover">Manage
-                                                    Account</a></li>
-                                            <li class="baseline-flow"><a href="" class="primary-hover">Redeem
-                                                    Voucher</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-4 col-md-4"><span class="opacity-40 block baseline-flow">Company</span>
-                                        <ul class="list-style-none">
-                                            <li class="baseline-flow"><a href="" class="primary-hover">About</a></li>
-                                            <li class="baseline-flow"><a href="" class="primary-hover">Career</a></li>
-                                            <li class="baseline-flow"><a href="" class="primary-hover">Press</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="album-list-explicit">
+                                <!---->
+                            </div>
+                            <div class="album-list-name artist-name secondary-title">
+                                <p class="ellipsis"><a href="">Paul Weller</a></p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12 margin-top-1 margin-top-md-min-4">
-                                <span class="opacity-40 font-size-small">TIDAL is the first music service with HD
-                                    sound quality, HD music videos and Curated Editorial, expertly crafted by music
-                                    journalists.</span>
+                        <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
+                            <div class="margin-bottom-nudge">
+                                <a href="">
+                                    <div class="block placeholder position-relative lazy-image-wrapper" style="padding-bottom:100%;"><img
+                                            src="images/tidas3.jpg" alt="True Meanings (Deluxe Edition)">
+                                    </div>
+                                </a></div>
+                            <div class="album-list-name font-weight-bold">
+                                <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
+                            </div>
+                            <div class="album-list-explicit">
+                                <!---->
+                            </div>
+                            <div class="album-list-name artist-name secondary-title">
+                                <p class="ellipsis"><a href="">Paul Weller</a></p>
                             </div>
                         </div>
-
-                        <div class="tidal-footer-links font-size-small clearfix padding-top-nudge padding-top-md-max-0 tidal-footer-line"><span
-                                class="float-right-md-min margin-left-nudge margin-left-md-max-0 tidal-footer-slot"></span>
-                            <ul class="list-style-none float-right-md-min clearfix">
-                                <li class="float-left-md-min margin-bottom-md-min-0 margin-right-1"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Privacy
-                                        policy</a></li>
-                                <li class="float-left-md-min margin-bottom-md-min-0 margin-right-1"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Terms
-                                        and Conditions</a></li>
-                                <li class="float-left-md-min margin-bottom-md-min-0 margin-right-1"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Stream
-                                        of Consciousness</a></li>
-                                <li class="float-left-md-min margin-bottom-md-min-0"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Contact</a></li>
-                            </ul> <span class="inline-block margin-bottom-1 opacity-40"><a title="TIDAL" href=/browse/"
-                                    class="font-size-medium text-align-medium"><i class="tidal-icon margin-right-nudge"><svg
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M12 5.6L8.3 9.3 4.6 5.6 0.9 9.3 4.6 13 8.3 9.3 12 13 8.3 16.7 12 20.4 15.7 16.7 12 13 15.7 9.3 12 5.6z" />
-                                            <path d="M16.8 6.7H22V11.9H16.8z" transform="rotate(-45 19.4 9.3)" /></svg></i></a>
-                                <span>© 2018 TIDAL Music AS</span></span>
+                        <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
+                            <div class="margin-bottom-nudge">
+                                <a href="">
+                                    <div class="block placeholder position-relative lazy-image-wrapper" style="padding-bottom:100%;"><img
+                                            src="images/tidas3.jpg" alt="True Meanings (Deluxe Edition)">
+                                    </div>
+                                </a></div>
+                            <div class="album-list-name font-weight-bold">
+                                <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
+                            </div>
+                            <div class="album-list-explicit">
+                                <!---->
+                            </div>
+                            <div class="album-list-name artist-name secondary-title">
+                                <p class="ellipsis"><a href="">Paul Weller</a></p>
+                            </div>
                         </div>
-
-
+                        <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
+                            <div class="margin-bottom-nudge">
+                                <a href="">
+                                    <div class="block placeholder position-relative lazy-image-wrapper" style="padding-bottom:100%;"><img
+                                            src="images/tidas3.jpg" alt="True Meanings (Deluxe Edition)">
+                                    </div>
+                                </a></div>
+                            <div class="album-list-name font-weight-bold">
+                                <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
+                            </div>
+                            <div class="album-list-explicit">
+                                <!---->
+                            </div>
+                            <div class="album-list-name artist-name secondary-title">
+                                <p class="ellipsis"><a href="">Paul Weller</a></p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-4 col-sm-9 margin-bottom-0">
+                            <div class="margin-bottom-nudge">
+                                <a href="">
+                                    <div class="block placeholder position-relative lazy-image-wrapper" style="padding-bottom:100%;"><img
+                                            src="images/tidas3.jpg" alt="True Meanings (Deluxe Edition)">
+                                    </div>
+                                </a></div>
+                            <div class="album-list-name font-weight-bold">
+                                <p class="ellipsis"><a href=""> True Meanings (Deluxe Edition)</a></p>
+                            </div>
+                            <div class="album-list-explicit">
+                                <!---->
+                            </div>
+                            <div class="album-list-name artist-name secondary-title">
+                                <p class="ellipsis"><a href="">Paul Weller</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!--main-->
+        <!--footer-->
+        <div>
+            <div class="footer theme-light-dark close-sign-up padding-top-4 padding-top-lg-max-2">
+                <div class="wrapper">
+                    <div class="row">
+                        <div class="col-3 col-md-centered-3 col-align-right margin-bottom-lg-min-0 text-center"><span
+                                class="block"><svg viewBox="0 0 300 153" fill="none" class="block fullwidth padding-left-nudge padding-right-nudge margin-bottom-2">
+                                    <path d="M55.5561798,83.6335178 L82.7174952,83.7716499 C85.1938121,83.7842435 87.1946103,85.7952428 87.1946103,88.2715917 L87.1946103,130.960674 L172.410017,130.960674 L172.519072,64.6597133 C172.523144,62.1838722 174.526462,60.1763765 177.00229,60.1671464 L245.567416,59.9115285 L245.567416,5 C245.567416,2.51471863 243.552697,0.5 241.067416,0.5 L60.0561798,0.5 C57.5708984,0.5 55.5561798,2.51471863 55.5561798,5 C55.5561798,13.3216841 55.5561798,13.3216841 55.5561798,21.6433682 C55.5561798,29.9650522 55.5561798,29.9650522 55.5561798,38.2867363 C55.5561798,49.2374314 55.5561798,49.2374314 55.5561798,60.5964194 C55.5561798,71.9971276 55.5561798,72.1572724 55.5561798,83.6335178 Z"
+                                        stroke="#9B9B9B"></path>
+                                    <path d="M94.3820225,138.202247 L171.910112,138.202247" stroke="#9B9B9B"
+                                        stroke-linecap="square"></path>
+                                    <rect stroke="#979797" x="165.668539" y="146.567416" width="133.831461" height="5.74157303"
+                                        rx="2"></rect>
+                                    <path d="M176.910112,60.0505618 C174.424831,60.0505618 172.410112,62.0652804 172.410112,64.5505618 C172.410112,69.3544475 172.410112,69.3544475 172.410112,74.1583331 C172.410112,78.9622188 172.410112,78.9622188 172.410112,83.7661044 C172.410112,97.4891474 172.410112,97.4891474 172.410112,111.21219 L172.410112,137.696629 C172.410112,140.181911 174.424831,142.196629 176.910112,142.196629 L288.258427,142.196629 C290.743708,142.196629 292.758427,140.181911 292.758427,137.696629 L292.758427,64.5505618 C292.758427,62.0652804 290.743708,60.0505618 288.258427,60.0505618 L176.910112,60.0505618 Z"
+                                        stroke="#9B9B9B"></path>
+                                    <path d="M42.0786517,83.6460674 C39.5933703,83.6460674 37.5786517,85.660786 37.5786517,88.1460674 C37.5786517,95.7904164 37.5786517,95.7904164 37.5786517,103.434765 C37.5786517,114.93245 37.5786517,114.93245 37.5786517,126.430135 L37.5786517,147.808989 C37.5786517,150.29427 39.5933703,152.308989 42.0786517,152.308989 L82.6404494,152.308989 C85.1257308,152.308989 87.1404494,150.29427 87.1404494,147.808989 L87.1404494,88.1460674 C87.1404494,85.660786 85.1257308,83.6460674 82.6404494,83.6460674 L42.0786517,83.6460674 Z"
+                                        stroke="#9B9B9B"></path>
+                                    <path d="M5,100.5 C2.51471863,100.5 0.5,102.514719 0.5,105 C0.5,110.190071 0.5,110.190071 0.5,115.380142 C0.5,119.738135 0.5,119.738135 0.5,124.096129 C0.5,128.454122 0.5,128.454122 0.5,132.812115 L0.5,147.808989 C0.5,150.29427 2.51471863,152.308989 5,152.308989 L21.9662921,152.308989 C24.4515735,152.308989 26.4662921,150.29427 26.4662921,147.808989 L26.4662921,105 C26.4662921,102.514719 24.4515735,100.5 21.9662921,100.5 L5,100.5 Z"
+                                        stroke="#9B9B9B"></path>
+                                </svg></span> <a href="" class="btn-primary-outline fullwidth margin-bottom-lg-max-1">Download
+                                TIDAL</a></div>
+                        <div class="col-9 margin-bottom-md-min-0">
+                            <div class="row">
+                                <div class="col-4 col-md-4"><span class="opacity-40 block baseline-flow">Get Started</span>
+                                    <ul class="list-style-none">
+                                        <li class="baseline-flow"><a href="" class="primary-hover">Playlist
+                                                Import</a></li>
+                                        <li class="baseline-flow"><a href="" class="primary-hover">Supported
+                                                devices</a></li>
+                                        <li class="baseline-flow"><a href="" class="primary-hover">Get
+                                                support</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-4 col-md-4"><span class="opacity-40 block baseline-flow">Account</span>
+                                    <ul class="list-style-none">
+                                        <li class="baseline-flow"><a href="" class="primary-hover">Sign
+                                                Up</a></li>
+                                        <li class="baseline-flow"><a href="" class="primary-hover">Manage
+                                                Account</a></li>
+                                        <li class="baseline-flow"><a href="" class="primary-hover">Redeem
+                                                Voucher</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-4 col-md-4"><span class="opacity-40 block baseline-flow">Company</span>
+                                    <ul class="list-style-none">
+                                        <li class="baseline-flow"><a href="" class="primary-hover">About</a></li>
+                                        <li class="baseline-flow"><a href="" class="primary-hover">Career</a></li>
+                                        <li class="baseline-flow"><a href="" class="primary-hover">Press</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 margin-top-1 margin-top-md-min-4">
+                            <div class="float-right-md-min margin-bottom-md-max-1 margin-left-nudge-1 margin-left-md-max-0 clearfix"><span
+                                    class="font-size-intermediate text-align-intermediate"><a title="TIDAL on Instagram"
+                                        href="" rel="noopener" target="_blank" class="opacity-40 opacity-hover-100 margin-right-nudge-1"><i
+                                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <g fill-rule="evenodd">
+                                                    <path d="M19.7142857,6 C18.7675714,6 18,5.23242857 18,4.28571429 C18,3.339 18.7675714,2.57142857 19.7142857,2.57142857 C20.661,2.57142857 21.4285714,3.339 21.4285714,4.28571429 C21.4285714,5.23242857 20.661,6 19.7142857,6 M12.0714286,19.5714286 C7.92928571,19.5714286 4.57142857,16.2135714 4.57142857,12.0714286 C4.57142857,7.92928571 7.92928571,4.57142857 12.0714286,4.57142857 C16.2135714,4.57142857 19.5714286,7.92928571 19.5714286,12.0714286 C19.5714286,16.2135714 16.2135714,19.5714286 12.0714286,19.5714286 M17.3318571,0 L6.66814286,0 C3.00071429,0 0,3.00057143 0,6.66814286 L0,17.3318571 C0,20.9992857 3.00071429,24 6.66814286,24 L17.3318571,24 C20.9992857,24 24,20.9992857 24,17.3318571 L24,6.66814286 C24,3.00057143 20.9992857,0 17.3318571,0"></path>
+                                                    <path d="M12,8 C9.79441509,8 8,9.79441509 8,12 C8,14.2055849 9.79441509,16 12,16 C14.2055849,16 16,14.2055849 16,12 C16,9.79441509 14.2055849,8 12,8"></path>
+                                                </g>
+                                            </svg></i></a> <a title="TIDAL on Facebook" href="https://facebook.com/TIDAL"
+                                        rel="noopener" target="_blank" class="opacity-40 opacity-hover-100 margin-right-nudge-1"><i
+                                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                                <path fill-rule="evenodd" d="M16.9998202 0H.9930337C.44453934 0 0 .44453933 0 .9930337v16.0067865c0 .548427.44453933.9931011.9930337.9931011h8.61755057v-6.9678202H7.26573034V8.3095955h2.34485393V6.30701125c0-2.32395506 1.41937083-3.58941573 3.49253933-3.58941573.9931011 0 1.8465843.07388765 2.0952809.10692135v2.4287191l-1.4378427.00067416c-1.1274607 0-1.3458202.53575282-1.3458202 1.32195507V8.3095955h2.6890112l-.3500899 2.7155056h-2.3389213v6.9678202h4.5850786c.548427 0 .9930337-.4446741.9930337-.9931011V.9930337C17.9928539.44453934 17.5482472 0 16.9998202 0"></path>
+                                            </svg></i></a> <a title="TIDAL on Twitter" href="https://twitter.com/TIDAL"
+                                        rel="noopener" target="_blank" class="opacity-40 opacity-hover-100"><i class="icon"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15">
+                                                <path fill-rule="evenodd" d="M5.660856 14.9697794c6.792768 0 10.507392-5.74713234 10.507392-10.73058822 0-.16330883-.00324-.32588236-.010584-.48757353.721008-.5322794 1.34784-1.1964706 1.842336-1.9527206-.661752.30014707-1.373832.5025-2.120832.59367648.76248-.4667647 1.34784-1.20558824 1.623888-2.08617647-.713664.4319853-1.50372.74617647-2.344896.91536765C14.484312.48875 13.524552.0302206 12.462552.0302206c-2.039616 0-3.693528 1.6890441-3.693528 3.77117646 0 .2960294.032472.58375.09576.85992647C5.79564 4.50375 3.07404 3.00294118 1.2528.72095588c-.317448.55720588-.500112 1.20485294-.500112 1.8955147 0 1.30852942.65196 2.46360295 1.643328 3.13933824-.605664-.0190441-1.174824-.1890441-1.67256-.47183823-.000864.01573528-.000864.0315441-.000864.04808822 0 1.8267647 1.273176 3.35161765 2.9628 3.69742647-.310104.08617646-.636552.13264705-.973512.13264705-.237888 0-.469296-.0240441-.694224-.0680147.47016 1.49838235 1.833408 2.58874995 3.449952 2.61948525-1.264176 1.0115442-2.856384 1.6143383-4.586616 1.6143383-.298008 0-.591912-.017353-.880992-.0522059 1.634472 1.0696323 3.575016 1.6940441 5.660856 1.6940441"></path>
+                                            </svg></i></a></span></div> <span class="opacity-40 font-size-small">TIDAL
+                                is the first music service with HD sound quality, HD music videos and Curated
+                                Editorial, expertly crafted by music journalists.</span>
+                        </div>
+                    </div>
+                    <div class="footer-links font-size-small clearfix padding-top-nudge padding-top-md-max-0 footer-line"><span
+                            class="float-right-md-min margin-left-nudge margin-left-md-max-0 footer-slot">
+                            <div class="dropdown inline-block position-relative is-reversed"><button
+                                    aria-controls="dropdownID" class="dropdown-button btn-link btn-medium current-hover align-dropdown"><span>EN</span>
+                                    <i class="icon dropdown-arrow margin-0 opacity-60"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24">
+                                            <path d="M12 14.6L18.3 8.3 19.7 9.7 12 17.4 4.3 9.7 5.7 8.3z"></path>
+                                        </svg></i></button>
+                                <div id="dropdownID" role="menu" class="dropdown-menu-wrapper" style="display: none;">
+                                    <div class="dropdown-menu custom-dropdown">
+                                        <div class="dropdown-menu--triangle"></div>
+                                        <ul class="overflow-hidden list-style-none text-dec-none margin-bottom-0">
+                                            <li class="dropdown-menu--item font-weight-bold"><button class="dropdown-menu--link primary-hover plain-button">
+                                                    English
+                                                    <!----></button></li>
+                                            <li class="dropdown-menu--item"><button class="dropdown-menu--link primary-hover plain-button">
+                                                    Polskie
+                                                    <!----></button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                        <ul class="list-style-none float-right-md-min clearfix">
+                            <li class="float-left-md-min margin-bottom-md-min-0 margin-right-1"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Privacy
+                                    policy</a></li>
+                            <li class="float-left-md-min margin-bottom-md-min-0 margin-right-1"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Terms
+                                    and Conditions</a></li>
+                            <li class="float-left-md-min margin-bottom-md-min-0 margin-right-1"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Stream
+                                    of Consciousness</a></li>
+                            <li class="float-left-md-min margin-bottom-md-min-0"><a href="" class="text-dec-none opacity-40 opacity-hover-100">Contact</a></li>
+                        </ul> <span class="inline-block margin-bottom-1 opacity-40"><a title="TIDAL" href="" class="font-size-medium text-align-medium"><i
+                                    class="icon margin-right-nudge"><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24">
+                                        <path d="M12 5.6L8.3 9.3 4.6 5.6 0.9 9.3 4.6 13 8.3 9.3 12 13 8.3 16.7 12 20.4 15.7 16.7 12 13 15.7 9.3 12 5.6z"></path>
+                                        <path d="M16.8 6.7H22V11.9H16.8z" transform="rotate(-45 19.4 9.3)"></path>
+                                    </svg></i></a> <span>© 2018 TIDAL Music AS</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--floating-->
+        <div class="floating-sign-up text-center floating-sign-up--is-visible"><a href="" class="floating-sign-up-content text-dec-none"><span
+                    class="floating-sign-up-text">Start your 30 day trial now. Cancel anytime.</span> <span class="floating-sign-up-line opacity-40 padding-left-nudge padding-right-nudge">|</span>
+                <span class="floating-sign-up-link font-weight-bold">Start free trial</span></a></div>
+    </div>
 </body>
 
 </html>
